@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfUIError.Views.TextBlockChangedView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfUIError.Views"
+        mc:Ignorable="d"
+        Title="TextBlockChangedView"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Height="900"
+        Width="1690">
+    <Window.Resources>
+        <WindowChrome x:Key="WindowChromeKey">
+            <WindowChrome.ResizeBorderThickness>
+                <Thickness>0</Thickness>
+            </WindowChrome.ResizeBorderThickness>
+        </WindowChrome>
+    </Window.Resources>
+    <Grid Opacity="0.6">
+        <Grid.Effect>
+            <DropShadowEffect ShadowDepth="0"
+                              BlurRadius="5"
+                              Opacity="0.9" />
+        </Grid.Effect>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="IniStart"
+                    Content="初始化"></Button>
+            <Button x:Name="Start"
+                    Content="开始"></Button>
+            <Button x:Name="Stop"
+                    Content="停止"></Button>
+            <TextBlock Text="刷新时间的数量"
+                       VerticalAlignment="Center"></TextBlock>
+            <TextBox Text="{Binding Listcount}"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock FontSize="10"
+                       Margin="10"
+                       Text="{Binding TimeText}"></TextBlock>
+            <Image Source="{Binding VideoImage}"
+                   Stretch="UniformToFill"
+                   Width="200"></Image>
+            <TextBlock FontSize="10"
+                       Margin="10"
+                       Text="{Binding TimeText1}"></TextBlock>
+            <Image Source="{Binding VideoImage1}"
+                   Stretch="UniformToFill"
+                   Width="200"></Image>
+        </StackPanel>
+    </Grid>
+</Window>
